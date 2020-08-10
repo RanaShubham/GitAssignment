@@ -8,3 +8,7 @@ WagePerHr=20
 FullDayHrs=8
 
 dailyEmpWage=$(($WagePerHr * $FullDayHrs))
+
+PartTimeHrs=8
+
+dailyPartTimeEmpWage=$(( $WagePerHr * $PartTimeHrs ))
