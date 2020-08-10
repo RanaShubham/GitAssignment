@@ -2,7 +2,7 @@
 
 echo "Welcome to employee wage computation program on master branch"
 
-attendance=$((RANDOM%2))
+attendance=$((RANDOM%1))
 
 WagePerHr=20
 FullDayHrs=8
