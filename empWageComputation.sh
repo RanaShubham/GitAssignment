@@ -6,7 +6,7 @@ attendance=$((RANDOM%2))
 
 WagePerHr=20
 
-empType=$((RADNOM%2+1))
+empType=$((RANDOM%2+1))
 
 case $empType in
 	1)
