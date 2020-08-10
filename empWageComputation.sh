@@ -11,24 +11,31 @@ read -p "Enter 1 for full time employee and Enter 2 for part time for part time 
 totalWorkingHrs=0
 totalWorkingDays=0
 
-while [[ $totalWorkingHrs -lt 100 && $totalWorkingDays -lt 20 ]]
-do
+# empType passed through arg
+function getTotalWorkHrs() {
 
-attendance=$((RANDOM%2))
-((totalWorkingDays++))
+local emp=$1
 
-	if [[ $attendance -eq 1 ]]
-	then
-		case $empType in
+	while [[ $totalWorkingHrs -lt 100 && $totalWorkingDays -lt 20 ]]
+	do
 
-			1)
-			totalWorkingHrs=$(($totalWorkingHrs+$RegularEmpHrs))
-			;;
+		attendance=$((RANDOM%2))
+		((totalWorkingDays++))
 
-			2)
-			totalWorkingHrs=$(($totalWorkingHrs+$PartTimeEmpHrs))
-			;;
+			if [[ $attendance -eq 1 ]]
+			then
+				case $emp in
 
-		esac
-	fi
-done
+					1)
+					totalWorkingHrs=$(($totalWorkingHrs+$RegularEmpHrs))
+					;;
+
+					2)
+					totalWorkingHrs=$(($totalWorkingHrs+$PartTimeEmpHrs))
+					;;
+
+				esac
+			fi
+	done
+
+}
