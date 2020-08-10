@@ -5,17 +5,10 @@ echo "Welcome to employee wage computation program on master branch"
 attendance=$((RANDOM%1))
 
 WagePerHr=20
+FullDayHrs=8
 
-empType=$((RADNOM%2+1))
+dailyEmpWage=$(($WagePerHr * $FullDayHrs))
 
-case $empType in
-	1)
-	EmpHrs=8
-	dailyEmpWage=$(( $WagePerHr * $EmpHrs ))
-	;;
+PartTimeHrs=8
 
-	2)
-	EmpHrs=4
-	dailyPartTimeEmpWage=$(( $WagePerHr * $EmpHrs ))
-	;;
-esac
+dailyPartTimeEmpWage=$(( $WagePerHr * $PartTimeHrs ))
