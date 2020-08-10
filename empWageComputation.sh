@@ -6,5 +6,7 @@ attendance=$((RANDOM%1))
 
 WagePerHr=20
 FullDayHrs=8
+PartTimeHrs=4
 
-dailyEmpWage=$(($WagePerHr * $FullDayHrs))
+dailyFullTimeEmpWage=$(($WagePerHr * $FullDayHrs))
+dailyPartTimeEmpWage=$(( $WagePerHr * $PartTimeHrs ))
