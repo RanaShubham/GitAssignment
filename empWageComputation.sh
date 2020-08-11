@@ -32,13 +32,13 @@ local emp=$1
 					1)
 					totalWorkingHrs=$(($totalWorkingHrs+$RegularEmpHrs))
 					dailyWage=$(($RegularEmpHrs * $WagePerHr))
-					Wages["$dailyWage"]=$(( $totalWorkingHrs * $dailyWage))
+					Wages["$dailyWage"]=$(( $totalWorkingHrs * $WagePerHr))
 					;;
 
 					2)
 					totalWorkingHrs=$(($totalWorkingHrs+$PartTimeEmpHrs))
 					dailyWage=$(( $PartTimeEmpHrs * $WagePerHr ))
-					Wages["$dailyWage"]=$(( $totalWorkingHrs * $dailyWage ))
+					Wages["$dailyWage"]=$(( $totalWorkingHrs * $WagePerHr ))
 					;;
 
 				esac
