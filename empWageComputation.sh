@@ -11,6 +11,9 @@ read -p "Enter 1 for full time employee and Enter 2 for part time for part time 
 totalWorkingHrs=0
 totalWorkingDays=0
 
+#Dictionary to hold daily wage and total wage of an emp
+declare -A Wages
+
 # empType passed through arg
 function getTotalWorkHrs() {
 
@@ -28,10 +31,14 @@ local emp=$1
 
 					1)
 					totalWorkingHrs=$(($totalWorkingHrs+$RegularEmpHrs))
+					dailyWage=$(($RegularEmpHrs * $WagePerHr))
+					Wages["$dailyWage"]=$(( $totalWorkingHrs * $dailyWage))
 					;;
 
 					2)
 					totalWorkingHrs=$(($totalWorkingHrs+$PartTimeEmpHrs))
+					dailyWage=$(( $PartTimeEmpHrs * $WagePerHr ))
+					Wages["$dailyWage"]=$(( $totalWorkingHrs * $dailyWage ))
 					;;
 
 				esac
@@ -39,3 +46,5 @@ local emp=$1
 	done
 
 }
+
+getTotalWorkHrs $empType
